@@ -1,6 +1,7 @@
 body{
     background: linear-gradient(to bottom,#0E3B5A 30%, #5EE4F4);
     font-family: 'Poppins', sans-serif;
+   
 }
 
 .bg-body-tertiary {
@@ -27,9 +28,13 @@ body{
     text-align: center;
 }
 
-#container-contacto{
-        display: flex;
-        justify-content: space-between;
+#contacto{
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-columns:  1fr 1fr;
 }
 
 
@@ -37,8 +42,9 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr; 
     gap: 20px; 
-    padding: 20px; /
+    padding: 20px; 
 }
+
 
 #mapaChico{
     display: none;
@@ -50,6 +56,11 @@ body{
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
+   
+ 
+  
 
 #logo {
     width: 25%;
@@ -180,6 +191,13 @@ body{
         height: 25%;
     }
 
+    #encontrar{
+      text-align: center;
+      font-size: 1.25rem;
+      padding-top: 15px;
+      margin-bottom: 20px;
+    }
+
     #mapaGrande{
         display: none;
     }
@@ -206,7 +224,7 @@ body{
   .item {
     width: 100%; 
     max-width: 600px; 
-    margin: 0 auto 20px; 
+    margin: 0 5px 20px; 
       padding: 0; 
   }
 
