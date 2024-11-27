@@ -1,0 +1,216 @@
+body{
+    background: linear-gradient(to bottom,#0E3B5A 30%, #5EE4F4);
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg-body-tertiary {
+    background-color: #09273b  !important; /* Cambia el color */
+} 
+
+.navbar-toggler, .navbar-toggler-icon{
+    background-color: #E0E7EF;
+}
+
+#carousel {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  #carousel img {
+    height: 300px;
+    width: 100%; 
+    object-fit: cover; 
+    object-position: center; 
+}
+
+#carrousel-container{
+    text-align: center;
+}
+
+#container-contacto{
+        display: flex;
+        justify-content: space-between;
+}
+
+
+#container-mapa {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+    padding: 20px; /
+}
+
+#mapaChico{
+    display: none;
+}
+
+.item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#logo {
+    width: 25%;
+    height: 255px;
+}
+
+#title {
+    text-align: center;
+}
+
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .poppins-extralight-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  .poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .poppins-medium-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+  .poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+  @media (max-width: 768px) {
+
+    body {
+        font-size: 14px; /* Texto más pequeño */
+        margin: 5% 0;
+    }
+
+    #logo {
+        width: 25%;
+        height: 25%;
+    }
+
+    #mapaGrande{
+        display: none;
+    }
+
+    #mapaChico{
+        display: block;
+    }
+
+
+    h3 {
+        font-size: 1.25rem;
+    }
+  
+  
+    #contacto {
+        display: grid;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        justify-items: stretch;
+        align-items: stretch;
+        grid-template-columns:  1fr;
+     }
+  
+  .item {
+    width: 100%; 
+    max-width: 600px; 
+    margin: 0 auto 20px; 
+      padding: 0; 
+  }
+
+    .navbar {
+        justify-content: space-between;
+    }
+}
