@@ -16,4 +16,5 @@ document.getElementById('messageForm').addEventListener('submit', (event) => {
         let whatsappMessage = `${encodeURIComponent(message.value)}`
     const whatsappUrl = `https://wa.me/${companyPhone}?text=${whatsappMessage}`;
     window.open(whatsappUrl, '_blank');
+    localStorage.clear()
 });
