@@ -1,15 +1,19 @@
+    const companyPhone = '59894510882';
+
+window.onload=()=>{
+    if (localStorage.getItem("nombre")) {
+        let message = document.getElementById('message');
+        let consulta = localStorage.getItem("nombre");
+        message.value = `Hola! Quería consultar acerca de ${consulta}.`;
+    } else {
+        message.value = message.value.trim()
+    }
+}
+
 document.getElementById('messageForm').addEventListener('submit', (event) => {
     event.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const companyPhone = '59894510882'; 
-
-    // Construye el mensaje para WhatsApp
-    const whatsappMessage = `Hola, soy ${encodeURIComponent(name)}.  
-${encodeURIComponent(message)}`;
-
-    
+    let message = document.getElementById('message');
+        let whatsappMessage = `${encodeURIComponent(message.value)}`
     const whatsappUrl = `https://wa.me/${companyPhone}?text=${whatsappMessage}`;
     window.open(whatsappUrl, '_blank');
 });

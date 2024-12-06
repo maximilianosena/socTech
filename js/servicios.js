@@ -54,13 +54,19 @@ function add_Elements (array) {
             <img src="${array[i].image}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">${array[i].name}</h5>
-              <button type="button" class="btn btn-info consultar" id="${array[i].id}">Consultar</button>
+              <button type="button" class="btn btn-info consultar" onclick="guardarConsulta('${array[i].name}')" id="${array[i].id}"> Consultar </button>
             </div>
           </div>
         </div>`
     }
 }
 
+function guardarConsulta (nombre){
+    localStorage.setItem("nombre", nombre)
+    console.log(localStorage.getItem("nombre"))
+
+    window.location.href="whatsapp.html"
+}
 
 
 if (container){
