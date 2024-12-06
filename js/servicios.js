@@ -9,7 +9,7 @@ let lista = [{
 },
 {
     name:"Cambio de Batería",
-    image:"/socTech/imgs/cel3.jpg",
+    image:"/socTech/imgs/cel3.jpeg",
     id:"02"
 },{
     name:"Cambio de Cámara",
