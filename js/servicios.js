@@ -4,50 +4,50 @@ let contenedor_software = document.getElementById("contenedor_software")
 
 let lista = [{
     name:"Cambio de Pantalla",
-    image:"./imgs/cel1.jpg",
+    image:"/socTech/imgs/cel1.jpg",
     id:"01"
 },
 {
     name:"Cambio de Táctil",
-    image:"./imgs/cel1.jpg",
+    image:"/socTech/imgs/cel1.jpg",
     id:"02"
 },
 {
     name:"Cambio de Batería",
-    image:"./imgs/cel1.jpg",
+    image:"/socTech/imgs/cel1.jpg",
     id:"03"
 },{
     name:"Cambio de Cámara",
-    image:"./imgs/cel1.jpg",
+    image:"/socTech/imgs/cel1.jpg",
     id:"04"
 },{
     name:"Cambio de USB",
-    image:"./imgs/cel1.jpg",
+    image:"/socTech/imgs/cel1.jpg",
     id:"05"
 },{
     name:"Cambio de Altavoces/Micrófono",
-    image:"./imgs/cel1.jpg",
+    image:"/socTech/imgs/cel1.jpg",
     id:"06"
 }
 ]
 
 let software = [{
     name:"Desbloqueo de Celular",
-    image:"./imgs/cel1.jpg",
+    image:"/socTech/imgs/cel1.jpg",
     id:"01s"
 },
 {
     name:"Problemas de conexión",
-    image:"./imgs/cel1.jpg",
+    image:"/socTech/imgs/cel1.jpg",
     id:"02s"
 },
 {
     name:"Celular lento",
-    image:"./imgs/cel1.jpg",
+    image:"/socTech/imgs/cel1.jpg",
     id:"03s"
 },{
     name:"Celular no Inicia",
-    image:"./imgs/cel1.jpg",
+    image:"/socTech/imgs/cel1.jpg",
     id:"04s"
 }
 ]
