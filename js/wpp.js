@@ -3,7 +3,7 @@ document.getElementById('messageForm').addEventListener('submit', (event) => {
 
     const name = document.getElementById('name').value.trim();
     const message = document.getElementById('message').value.trim();
-    const companyPhone = '59895827701'; 
+    const companyPhone = '59894510882'; 
 
     // Construye el mensaje para WhatsApp
     const whatsappMessage = `Hola, soy ${encodeURIComponent(name)}.  
