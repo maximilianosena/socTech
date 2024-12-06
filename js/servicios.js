@@ -4,50 +4,45 @@ let contenedor_software = document.getElementById("contenedor_software")
 
 let lista = [{
     name:"Cambio de Pantalla",
-    image:"/socTech/imgs/cel1.jpg",
+    image:"/socTech/imgs/pantalla.jpg",
     id:"01"
 },
 {
-    name:"Cambio de Táctil",
-    image:"/socTech/imgs/cel1.jpg",
-    id:"02"
-},
-{
     name:"Cambio de Batería",
-    image:"/socTech/imgs/cel1.jpg",
-    id:"03"
+    image:"/socTech/imgs/cel3.jpg",
+    id:"02"
 },{
     name:"Cambio de Cámara",
-    image:"/socTech/imgs/cel1.jpg",
+    image:"/socTech/imgs/camara.jpg",
+    id:"03"
+},{
+    name:"Cambio de Puerto de carga",
+    image:"/socTech/imgs/usb.jpg",
     id:"04"
 },{
-    name:"Cambio de USB",
-    image:"/socTech/imgs/cel1.jpg",
-    id:"05"
-},{
     name:"Cambio de Altavoces/Micrófono",
-    image:"/socTech/imgs/cel1.jpg",
-    id:"06"
+    image:"/socTech/imgs/altavoz.webp",
+    id:"05"
 }
 ]
 
 let software = [{
     name:"Desbloqueo de Celular",
-    image:"/socTech/imgs/cel1.jpg",
+    image:"/socTech/imgs/bloqueado.webp",
     id:"01s"
 },
 {
     name:"Problemas de conexión",
-    image:"/socTech/imgs/cel1.jpg",
+    image:"/socTech/imgs/noWifi.jpg",
     id:"02s"
 },
 {
     name:"Celular lento",
-    image:"/socTech/imgs/cel1.jpg",
+    image:"/socTech/imgs/lento.jpg",
     id:"03s"
 },{
     name:"Celular no Inicia",
-    image:"/socTech/imgs/cel1.jpg",
+    image:"/socTech/imgs/noInicia.webp",
     id:"04s"
 }
 ]

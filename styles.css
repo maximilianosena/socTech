@@ -81,6 +81,10 @@ body{
 #carousel {
     width: 50%;
     margin: 0 auto;
+    display: flex;
+  justify-content: center; 
+  align-items: center; 
+  position: relative;
   }
 
   #carousel img {
@@ -88,6 +92,26 @@ body{
     width: 100%; 
     object-fit: cover; 
     object-position: center; 
+}
+
+#carousel img:hover {
+  opacity: 0.5;
+}
+
+#carousel .texto-oculto{
+opacity: 0;
+color: #ccc;
+background-color: #333;
+position: absolute;
+text-align: center;
+top: 50%; 
+left: 50%; 
+transform: translate(-50%, -50%); 
+z-index: 1;
+}
+
+#carousel img:hover + .texto-oculto{
+opacity: 1;
 }
 
 #carrousel-container{
