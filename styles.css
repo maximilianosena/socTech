@@ -5,7 +5,7 @@ body{
 }
 
 .bg-body-tertiary {
-    background-color: #09273b  !important; /* Cambia el color */
+    background-color: #09273b  !important; 
 } 
 
 .navbar-toggler, .navbar-toggler-icon{
@@ -37,6 +37,14 @@ body{
   grid-template-columns:  1fr 1fr;
 }
 
+#reparaciones{
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-columns:  1fr 1fr;
+}
 
 #container-mapa {
     display: grid;
@@ -57,10 +65,22 @@ body{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
+.subtitulo {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin: 0 5% 2% 12%;
+  width: 75%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
    
- 
+ .reparacion{
+  margin: 2%;
+ }
   
+.consultar {
+  margin-bottom: 2%;
+}
 
 #logo {
     width: 25%;
@@ -182,13 +202,13 @@ body{
   @media (max-width: 768px) {
 
     body {
-        font-size: 14px; /* Texto más pequeño */
+        font-size: 14px; 
         margin: 5% 0;
     }
 
     #logo {
-        width: 25%;
-        height: 25%;
+        width: 100%;
+       
     }
 
     #encontrar{
@@ -228,6 +248,10 @@ body{
       padding: 0; 
   }
 
+  #carousel {
+    width: 100%;
+    margin: 0 auto;
+  }
     .navbar {
         justify-content: space-between;
     }
