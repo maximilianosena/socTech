@@ -1,6 +1,7 @@
 let container = document.getElementById("contenedor_servicios")
 
 let contenedor_software = document.getElementById("contenedor_software")
+localStorage.clear()
 
 let lista = [{
     name:"Cambio de Pantalla",
