@@ -5,45 +5,45 @@ localStorage.clear()
 
 let lista = [{
     name:"Cambio de Pantalla",
-    image:"/socTech/imgs/pantalla.jpg",
+    image:"/imgs/pantalla.jpg",
     id:"01"
 },
 {
     name:"Cambio de Batería",
-    image:"/socTech/imgs/cel3.jpeg",
+    image:"/imgs/cel3.jpeg",
     id:"02"
 },{
     name:"Cambio de Cámara",
-    image:"/socTech/imgs/camara.jpg",
+    image:"/imgs/camara.jpg",
     id:"03"
 },{
     name:"Cambio de Puerto de carga",
-    image:"/socTech/imgs/usb.jpg",
+    image:"/imgs/usb.jpg",
     id:"04"
 },{
     name:"Cambio de Altavoces/Micrófono",
-    image:"/socTech/imgs/altavoz.webp",
+    image:"/imgs/altavoz.webp",
     id:"05"
 }
 ]
 
 let software = [{
     name:"Desbloqueo de Celular",
-    image:"/socTech/imgs/bloqueado.webp",
+    image:"/imgs/bloqueado.webp",
     id:"01s"
 },
 {
     name:"Problemas de conexión",
-    image:"/socTech/imgs/noWifi.jpg",
+    image:"/imgs/noWifi.jpg",
     id:"02s"
 },
 {
     name:"Celular lento",
-    image:"/socTech/imgs/lento.jpg",
+    image:"/imgs/lento.jpg",
     id:"03s"
 },{
     name:"Celular no Inicia",
-    image:"/socTech/imgs/noInicia.webp",
+    image:"/imgs/noInicia.webp",
     id:"04s"
 }
 ]
