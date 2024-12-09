@@ -74,8 +74,26 @@ document.getElementById('messageForm').addEventListener('submit', async (e) => {
             responseMessage.style.color = 'yellow';
         }
     } else if (!isMobile()) {
-
-        window.location.href = mailtoLink;
+        if (email.includes('@gmail')) {
+            let link =  mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=soctech@soctech-uy.com&su=Consulta de ${encodeURIComponent(name)}&body=Has recibido un mensaje de ${encodeURIComponent(name)} (${encodeURIComponent(email)}):%0D%0A%0D%0A${encodeURIComponent(message)}`;
+            responseMessage.style.display = 'block';
+            responseMessage.textContent = 'Redireccionando a su correo.';
+            responseMessage.style.color = 'green';
+            window.location.href = link
+            window.location.href = mailtoLink;}
+            else if (email.includes('@outlook')){
+                let mailtoLink = `https://outlook.live.com/mail/0/deeplink/compose?to=soctech@soctech-uy.com&subject=Consulta de ${encodeURIComponent(name)}&body=Has recibido un mensaje de ${encodeURIComponent(name)} (${encodeURIComponent(email)}):%0D%0A%0D%0A${encodeURIComponent(message)}`
+                responseMessage.style.display = 'block';
+                responseMessage.textContent = 'Redireccionando a su correo.';
+                responseMessage.style.color = 'green';
+                window.location.href = mailtoLink
+            } else {
+                let link = `mailto:soctech@soctech-uy.com?subject=Consulta de ${encodeURIComponent(name)}&body=Has recibido un mensaje de ${encodeURIComponent(name)} (${encodeURIComponent(email)}):%0D%0A%0D%0A${encodeURIComponent(message)}`
+                responseMessage.style.display = 'block';
+                responseMessage.textContent = 'Correo desconocido, seleccione su proveedor.';
+                responseMessage.style.color = 'yellow';
+                window.location.href = link;
+            }
 
     } else {
         responseMessage.style.display = 'block';
