@@ -1,30 +1,43 @@
-document.getElementById('messageForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
+document.getElementById('messageForm').addEventListener('submit', async (e) => {
+    e.preventDefault(); 
 
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
+    const responseMessage = document.getElementById('responseMessage');
 
-    try {
-        const response = await fetch('https://api.soctech-uy.com/send-email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, email, message }),
-        });
 
-        const responseMessage = document.getElementById('responseMessage');
-        if (response.ok) {
+    if (name.trim()!="" && email.trim()!="" && message.trim()!="") {
+        
+        let mailtoLink = '';
+
+        if (email.includes('@gmail')) {
             responseMessage.style.display = 'block';
-            responseMessage.textContent = 'Mensaje enviado con éxito.';
+            responseMessage.textContent = 'Redireccionando a su correo.';
             responseMessage.style.color = 'green';
-        } else {
+            mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=soctech@soctech-uy.com.com&su=Consulta de ${encodeURIComponent(name)}&body=Has recibido un mensaje de ${encodeURIComponent(name)} (${encodeURIComponent(email)}):%0D%0A%0D%0A${encodeURIComponent(message)}`;
+        } else if (email.includes('@outlook')) {
             responseMessage.style.display = 'block';
-            responseMessage.textContent = 'Error al enviar el mensaje.';
-            responseMessage.style.color = 'red';
+            responseMessage.textContent = 'Redireccionando a su correo.';
+            responseMessage.style.color = 'green';
+            mailtoLink = `https://outlook.live.com/mail/0/deeplink/compose?to=soctech@soctech-uy.com.com&subject=Consulta de ${encodeURIComponent(name)}&body=Has recibido un mensaje de ${encodeURIComponent(name)} (${encodeURIComponent(email)}):%0D%0A%0D%0A${encodeURIComponent(message)}`;
+        } else {
+           
+            mailtoLink = `mailto:soctech@soctech-uy.com.com?subject=Consulta de ${encodeURIComponent(name)}&body=Has recibido un mensaje de ${encodeURIComponent(name)} (${encodeURIComponent(email)}):%0D%0A%0D%0A${encodeURIComponent(message)}`;
+            responseMessage.style.display = 'block';
+            responseMessage.textContent = 'Correo desconocido, seleccione su proveedor.';
+            responseMessage.style.color = 'yellow';
         }
-    } catch (error) {
-        console.error('Error:', error);
+
+        
+        window.location.href = mailtoLink;
+
+    } else {
+        responseMessage.style.display = 'block';
+        responseMessage.textContent = 'Por favor, complete todos los campos.';
+        responseMessage.style.color = 'red';
     }
 });
+
+
+
