@@ -366,10 +366,10 @@ a.custom-card:hover {
 }
 
 .checked {
-  color: orange;
+  color: #0E3B5A;
 }
 
-/*Codigo Franco*/
+/*Codigo*/
 
 .bd-placeholder-img {
   filter: opacity(0.6);
@@ -504,26 +504,26 @@ body {
 /* Filtros de busqueda */
 /* Cambia el color de fondo de los botones */
 .btn-light {
-  background-color: orange;
+  background-color: #0E3B5A;
   color: #333;
 }
 
 /* Cambia el estilo de los botones de filtro | filtrar  */
 #rangeFilterCount {
-  background-color: orange;
+  background-color: #0E3B5A;
   color: #fff;
 }
 
 /* Cambia el estilo de los botones de filtro | limpiar */
 #clearRangeFilter {
-  background-color: orange;
+  background-color: #0E3B5A;
   color: #fff;
   text-decoration: none;
 }
 
 /* Cambia el estilo del input de número */
 .form-control {
-  border: 3px solid orange;
+  border: 3px solid #0E3B5A;
   padding: 5px;
   border-radius: 5px;
   min-width: 30px;
@@ -594,7 +594,7 @@ body {
 #priceProduct {
   font-size: 24px;
   font-weight: bold;
-  color: #ff9f1a;
+  color: #0E3B5A;
 }
 
 /*Estilos para la descripción del producto*/
@@ -667,7 +667,7 @@ input[type="text"] {
 
 /* Estilo para los botones */
 #custom-button {
-  background-color: #ff9f1a;
+  background-color: #0E3B5A;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -676,14 +676,14 @@ input[type="text"] {
 }
 
 #custom-button:hover {
-  background-color: #ff9f1a;
+  background-color: #0E3B5A;
 }
 .CartBtn {
   width: 230px;
   height: 45px;
   border-radius: 12px;
   border: none;
-  background-color: orange;
+  background-color: #0E3B5A;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -750,7 +750,7 @@ input[type="text"] {
 }
 
 .toast-header {
-  background-color: orange;
+  background-color: #0E3B5A;
   color: white;
   border-style: none;
 }
@@ -764,8 +764,8 @@ input[type="text"] {
   margin-left: 24.5%;
   padding-left: 20%;
   padding-right: 20%;
-  background-color:orange;
-  border-color: orange;
+  background-color:#0E3B5A;
+  border-color: #0E3B5A;
 
 }
 
