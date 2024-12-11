@@ -545,7 +545,7 @@ body {
   padding: 20px;
   text-align: center;
   background-color: #f4f4f4;
-  border-radius: 50px;
+  border-radius: 33%;
   margin: 10px;
   max-width: 30%;
   display: block;
@@ -561,6 +561,8 @@ body {
   transition: border-color 0.3s ease-in-out;
   border-radius: 10px;
   border: 2px solid #ddd;
+object-fit: cover; 
+    object-position: center;
 }
 
 
@@ -618,6 +620,8 @@ h5 {
   border-radius: 5px;
   transition: transform 0.2s ease;
   /* Transición suave de transformación */
+object-fit: cover; 
+    object-position: center;
 }
 
 /* Efecto hover para las imágenes */
