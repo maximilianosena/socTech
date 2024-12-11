@@ -356,3 +356,424 @@ color: #333;
         justify-content: space-between;
     }
 }
+
+
+/******/
+a.custom-card,
+a.custom-card:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.checked {
+  color: orange;
+}
+
+/*Codigo Franco*/
+
+.bd-placeholder-img {
+  filter: opacity(0.6);
+  width: 100%;
+  transition: 0.5s;
+}
+
+.card:hover .bd-placeholder-img {
+  filter: opacity(1);
+}
+
+.card:hover {
+  transform: scale(0.9);
+  border-radius: 1em;
+}
+
+.card {
+  transition: 0.5s;
+  border-radius: 1em;
+}
+
+.row {
+  justify-content: center;
+  display: flex;
+}
+
+.container_product {
+  width: auto;
+  border-radius: 7px;
+  background-color: #e9e9e9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#lista {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.container_product {
+  padding: 1vw;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: #e9e9e9;
+}
+
+.texto-hover {
+  font-size: 1vw;
+  color: #ff9f1a;
+  font-weight: bold;
+}
+
+.container_animado {
+  position: relative;
+}
+
+.container_animado img {
+  transition-duration: 0.5s;
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1vw;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+  padding: 0;
+}
+
+/*span con clase*/
+.description {
+  font-size: 20px;
+  font-family: 'Verdana', serif;
+  color: rgb(56, 56, 56);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  /* Coloca la imagen por encima del degradado */
+  position: relative;
+  z-index: 2;
+}
+
+/*Código de la Barra de Busqueda*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+
+.contenedor {
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  display: flexbox;
+  margin-bottom: 4vw;
+}
+
+
+
+.input-group.mb-3 {
+  border-radius: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 2vw;
+  float: initial;
+  color: #ffff;
+  background-color: #Ffff;
+}
+
+
+#search-input {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  width: 100%
+}
+
+/* Filtros de busqueda */
+/* Cambia el color de fondo de los botones */
+.btn-light {
+  background-color: orange;
+  color: #333;
+}
+
+/* Cambia el estilo de los botones de filtro | filtrar  */
+#rangeFilterCount {
+  background-color: orange;
+  color: #fff;
+}
+
+/* Cambia el estilo de los botones de filtro | limpiar */
+#clearRangeFilter {
+  background-color: orange;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Cambia el estilo del input de número */
+.form-control {
+  border: 3px solid orange;
+  padding: 5px;
+  border-radius: 5px;
+  min-width: 30px;
+}
+
+/* Cambia el estilo del botón de ordenamiento seleccionado */
+.btn-check:checked+.btn {
+  background-color: #363636;
+  color: #fff;
+}
+
+
+/*Estilo para product-info.js*/
+/* Estilos para el título del producto */
+#titleProduct {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border-radius: 50px;
+  margin: 10px;
+  max-width: 30%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Estilos para el carrusel del producto */
+#firstImage img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  transition: border-color 0.3s ease-in-out;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+}
+
+
+.carousel-indicators button {
+  border-radius: 100%;
+  /* Hace que los botones sean redondos */
+}
+
+.carousel-control-prev-icon {
+  background-color: rgb(189, 189, 189);
+  /* Cambia el color de fondo del botón activo */
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.carousel-control-next-icon {
+  background-color: rgb(189, 189, 189);
+  /* Cambia el color de fondo del botón activo */
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.product-info {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/*Estilos para el precio del producto*/
+#priceProduct {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff9f1a;
+}
+
+/*Estilos para la descripción del producto*/
+#descriptionProduct {
+  margin-top: 10px;
+  color: #333;
+}
+/* Estilos adicionales */
+h5 {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Estilos para las imágenes de productos relacionados */
+.related-product img {
+  max-height: 150px;
+  display: block;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: transform 0.2s ease;
+  /* Transición suave de transformación */
+}
+
+/* Efecto hover para las imágenes */
+.related-product img:hover {
+  transform: scale(1.1);
+  /* Escala la imagen al 110% en hover */
+}
+/* Estilo para la tabla */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.table th,
+.table td {
+  border-bottom: none;
+  padding: 1em;
+}
+
+
+#subAll {
+  color: #ff9f1a;
+  font-weight: bold;
+}
+
+#shipType {
+  color: #ff9f1a;
+  font-weight: bold;
+}
+
+#totalCart {
+  color: #ff9f1a;
+  font-weight: bold;
+}
+
+
+/* Estilo para los campos de entrada de texto */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Estilo para los botones */
+#custom-button {
+  background-color: #ff9f1a;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#custom-button:hover {
+  background-color: #ff9f1a;
+}
+.CartBtn {
+  width: 230px;
+  height: 45px;
+  border-radius: 12px;
+  border: none;
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: .5s;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  margin: 1em;
+  margin-bottom: 1.5em;
+}
+
+
+.IconContainer {
+  position: absolute;
+  left: -50px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: .5s;
+
+}
+
+.icon {
+  border-radius: 1px;
+  color: wheat;
+}
+
+.text {
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(238, 238, 238);
+  z-index: 1;
+  transition-duration: .5s;
+  font-size: 0.9em;
+  font-weight: 100;
+  margin-top: auto;
+}
+
+.CartBtn:hover .IconContainer {
+  transform: translateX(58px);
+  border-radius: 40px;
+  transition-duration: .5s;
+
+}
+
+.CartBtn:hover .text {
+  transform: translate(10px, 0px);
+  transition-duration: .5s;
+}
+
+.CartBtn:active {
+  transform: scale(0.95);
+  transition-duration: .5s;
+}
+
+.toast-header {
+  background-color: orange;
+  color: white;
+  border-style: none;
+}
+
+#miToast {
+  margin: 15px;
+  border-style: none;
+}
+
+#finalizePurchase {
+  margin-left: 24.5%;
+  padding-left: 20%;
+  padding-right: 20%;
+  background-color:orange;
+  border-color: orange;
+
+}
+
+input:disabled {
+  background-color: #aaaaaa;
+}
+
+.me-auto a {
+  color: white;
+  text-decoration: none;
+}

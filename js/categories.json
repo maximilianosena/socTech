@@ -1,0 +1,30 @@
+[
+{
+"id": 101,
+"name": "Cargadores / PowerBanks",
+"description": "Cargadores universales, de carga rápida, Samsung, Iphone.",
+"productCount": "5",
+"imgSrc": "imgs/cargadores.webp"
+},
+{
+"id": 102,
+"name": "Cables",
+"description": "Cables USB, tipo C, auxiliar, HDMI",
+"productCount": "4",
+"imgSrc": "imgs/cables.jpg"
+},
+{
+"id": 103,
+"name": "Vidrios",
+"description": "Vidrios templados, hidrogel.",
+"productCount": "2",
+"imgSrc": "imgs/vidrio.jpg"
+},
+{
+"id": 104,
+"name": "Carcasas",
+"description": "Todos los modelos, todos los diseños.",
+"productCount": 10,
+"imgSrc": "imgs/carcasas.jpg"
+}
+]

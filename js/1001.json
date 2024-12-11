@@ -1,0 +1,10 @@
+[
+{
+"id": 1001,
+"name": "Cargador Universal",
+"description": "Para todo celular.",
+"currency": "$",
+"images": ["imgs/cargadores.webp", "imgs/cables.jpg", "imgs/cel1.jpg", "imgs/cel2.jpg"],
+"cost": 200,
+"relatedProducts":[{"id":1002,"name":"Cargador Samsung","image":"imgs/cel3.jpeg"},{"id":1003,"name":"Cargador Iphone","image":"imgs/cel1.jpg"}]
+}]
