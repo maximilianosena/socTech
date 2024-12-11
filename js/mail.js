@@ -38,7 +38,7 @@ document.getElementById('messageForm').addEventListener('submit', async (e) => {
                 
                 let gmailLink = `intent://send?to=soctech@soctech-uy.com&subject=Consulta de ${encodeURIComponent(name)}&body=Has recibido un mensaje de ${encodeURIComponent(name)} (${encodeURIComponent(email)}):%0D%0A%0D%0A${encodeURIComponent(message)}#Intent;scheme=mailto;package=com.google.android.gm;end`
                 window.location.href = gmailLink;
-            } else if (email.includes('@outlook')) {
+            } else if (email.includes('@outlook')||email.includes('@hotmail')) {
                 responseMessage.style.display = 'block';
                 responseMessage.textContent = 'Redireccionando a Outlook...';
                 responseMessage.style.color = 'green';
@@ -61,7 +61,7 @@ document.getElementById('messageForm').addEventListener('submit', async (e) => {
             responseMessage.style.color = 'green';
            let gmailIOSLink = `googlegmail://co?to=soctech@soctech-uy.com&subject=Consulta de ${encodeURIComponent(name)}&body=Has recibido un mensaje de ${encodeURIComponent(name)} (${encodeURIComponent(email)}):%0D%0A%0D%0A${encodeURIComponent(message)}`;
            window.location.href = gmailIOSLink;
-        } else if (email.includes('@outlook')) {
+        } else if (email.includes('@outlook')||email.includes('@hotmail')) {
             responseMessage.style.display = 'block';
             responseMessage.textContent = 'Redireccionando a su correo.';
             responseMessage.style.color = 'green';
@@ -81,7 +81,7 @@ document.getElementById('messageForm').addEventListener('submit', async (e) => {
             responseMessage.style.color = 'green';
             window.location.href = link
             window.location.href = mailtoLink;}
-            else if (email.includes('@outlook')){
+            else if (email.includes('@outlook')||email.includes('@hotmail')){
                 let mailtoLink = `https://outlook.live.com/mail/0/deeplink/compose?to=soctech@soctech-uy.com&subject=Consulta de ${encodeURIComponent(name)}&body=Has recibido un mensaje de ${encodeURIComponent(name)} (${encodeURIComponent(email)}):%0D%0A%0D%0A${encodeURIComponent(message)}`
                 responseMessage.style.display = 'block';
                 responseMessage.textContent = 'Redireccionando a su correo.';
