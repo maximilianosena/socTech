@@ -511,13 +511,13 @@ body {
 /* Cambia el estilo de los botones de filtro | filtrar  */
 #rangeFilterCount {
   background-color: #0E3B5A;
-  color: #fff;
+  color: #f2f2f2;
 }
 
 /* Cambia el estilo de los botones de filtro | limpiar */
 #clearRangeFilter {
   background-color: #0E3B5A;
-  color: #fff;
+  color: #f2f2f2;
   text-decoration: none;
 }
 
@@ -532,7 +532,7 @@ body {
 /* Cambia el estilo del botón de ordenamiento seleccionado */
 .btn-check:checked+.btn {
   background-color: #363636;
-  color: #fff;
+  color: #f2f2f2;
 }
 
 
