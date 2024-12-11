@@ -418,8 +418,8 @@ a.custom-card:hover {
 }
 
 .texto-hover {
-  font-size: 1vw;
-  color: #ff9f1a;
+  font-size: 5vw;
+  color: #0E3B5A;
   font-weight: bold;
 }
 
@@ -446,7 +446,7 @@ a.custom-card:hover {
 .description {
   font-size: 20px;
   font-family: 'Verdana', serif;
-  color: rgb(56, 56, 56);
+  color: #0E3B5A;
 }
 
 .product-image {
