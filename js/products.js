@@ -12,8 +12,8 @@ function setProductID(id) {
 function showProducts(array) {
 
 
-  const content = array.map(product => `
-    <div class="container_product" onclick="setProductID(${product.id})" style="cursor:pointer;">
+  for (let product of array) {
+    let contenido = `<div class="container_product" onclick="setProductID(${product.id})" style="cursor:pointer;">
       <div class="container_animado">
         <img src="${product.image}" height="300">
         <span class="texto-hover">${product.name}
@@ -21,11 +21,11 @@ function showProducts(array) {
         </span>
       </div>
       <span class="description">${product.description}</span>
-    </div>
-  `).join('');
+    </div>`
 
 
-  container.innerHTML = content;
+  container.innerHTML += contenido;
+}
 }
 
     
@@ -38,7 +38,7 @@ const categories = localStorage.getItem("catID")
 
 console.log(" Numero de categoria: " + categories)
 
-let url = 'js/' + categories + '.json'
+let url = `https://api.soctech-uy.com/categoria/${categories}`
 
 fetch(url)
   .then((response) => {
@@ -48,7 +48,7 @@ fetch(url)
   })
   .then((data) => {
     console.log(data);
-    products = data
+    products = data.products
     showProducts(products);
   })
 

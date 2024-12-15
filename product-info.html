@@ -26,6 +26,8 @@
   <nav class="navbar bg-body-tertiary custom-navbar">
       <div class="container-fluid">
           <a class="navbar-brand" href="index.html" style="color: #E0E7EF;">Tu mejor solución</a>
+          <a class="navbar-brand ms-auto"  aria-current="page" href="cart.html"><img src="imgs/carrito-de-compras-24.png" alt=""></a>
+
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
               aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -42,11 +44,11 @@
                           <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="somos.html">Quienes somos</a>
+                          <a class="nav-link" href="somos.html" style="color: black;">Quienes somos</a>
                       </li>
-                      <li class="nav-item dropdown">
+                      <li class="nav-item dropdown" >
                           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                              aria-expanded="false">
+                              aria-expanded="false" style="color: black;">
                               Servicios
                           </a>
                           <ul class="dropdown-menu">
@@ -58,6 +60,9 @@
                       <li class="nav-item">
                           <a class="nav-link disabled" href="#">Tienda</a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link ms-auto" style="color: black;" aria-current="page" href="cart.html" target="_blank"><img src="imgs/carrito-de-compras.png" alt="">Carrito</a>
+                      </li>
                   </ul>
 
               </div>
@@ -68,7 +73,7 @@
   <main>
     <div class="container">
 
-      <div id="title">
+      <div id="titleProducto">
 
       </div>
 
@@ -121,7 +126,7 @@
 
     <div id="miToast" class="toast bf-alert position-fixed bottom-0 end-0 p-3" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
-        <img src="img/carrito-de-compras-24.png" width="30" class="rounded me-2" alt="...">
+        <img src="imgs/carrito-de-compras-24.png" width="30" class="rounded me-2" alt="...">
         <strong class="me-auto"><a href="cart.html" target="_blank">Su producto fue agregado al Carrito</a></strong>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         

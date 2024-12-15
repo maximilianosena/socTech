@@ -63,8 +63,8 @@ function add_Elements (array) {
 }
 
 function guardarConsulta (nombre){
-    localStorage.setItem("nombre", nombre)
-    console.log(localStorage.getItem("nombre"))
+    localStorage.setItem("consulta", nombre)
+    console.log(localStorage.getItem("consulta"))
 
     window.location.href="whatsapp.html"
 }

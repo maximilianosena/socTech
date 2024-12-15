@@ -26,6 +26,8 @@
   <nav class="navbar bg-body-tertiary custom-navbar">
       <div class="container-fluid">
           <a class="navbar-brand" href="index.html" style="color: #E0E7EF;">Tu mejor solución</a>
+          <a class="navbar-brand ms-auto"  aria-current="page" href="cart.html"><img src="imgs/carrito-de-compras-24.png" alt=""></a>
+
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
               aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -42,11 +44,11 @@
                           <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="somos.html">Quienes somos</a>
+                          <a class="nav-link" href="somos.html" style="color: black;">Quienes somos</a>
                       </li>
                       <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                              aria-expanded="false">
+                              aria-expanded="false" style="color: black;">
                               Servicios
                           </a>
                           <ul class="dropdown-menu">
@@ -57,6 +59,9 @@
                       </li>
                       <li class="nav-item">
                           <a class="nav-link disabled" href="#">Tienda</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link ms-auto" style="color: black;" aria-current="page" href="cart.html" target="_blank"><img src="imgs/carrito-de-compras.png" alt="">Carrito</a>
                       </li>
                   </ul>
 
@@ -78,14 +83,13 @@
       <div class="container">
         <div class="row" id="rowEdit">
           <div class="col text-end">
+            <span class="font-weight-normal text-end g-sm-2 my-2" style="color: #E0E7EF;">Ordenar:</span>
             <div class="btn-group btn-group-toggle mb-3" id="btn_sort" data-bs-toggle="buttons">
               <input type="radio" class="btn-check" name="options" id="sortAsc">
-              <label class="btn btn-light" for="sortAsc">↓$</label>
+              <label class="btn btn-dark" for="sortAsc">↓$</label>
               <input type="radio" class="btn-check" name="options" id="sortDesc">
-              <label class="btn btn-light" for="sortDesc">↑$</label>
-              <input type="radio" class="btn-check" name="options" id="sortByCount">
-              <label class="btn btn-light" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i> Por Cantidad</label>
-            </div>
+              <label class="btn btn-dark" for="sortDesc">↑$</label>
+              
           </div>
         </div>
         <div class="row m-4">

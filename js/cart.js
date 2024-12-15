@@ -4,8 +4,7 @@ let totalElement = document.getElementById("total");
 let list = [];
 
 console.log("lista", list)
-let ID = 25801;
-let urlProduct = 'https://japceibal.github.io/emercado-api/user_cart/' + ID + '.json';
+
 
 let resultadoSubtotal;
 /////////////////////////////////////////////////////////////
@@ -163,12 +162,12 @@ function subTotals() {
   let resultado = 0;
   if (allSubtotal.length === 0) {
     console.log("vacío")
-    containerSubtotal.innerHTML = ` USD 0`
-    containerTax.innerHTML = ` USD 0`
-    totalFinal.textContent = ` USD 0`
+    containerSubtotal.innerHTML = ` $ 0`
+    containerTax.innerHTML = ` $ 0`
+    totalFinal.textContent = ` $ 0`
   } else {
     for (let i = 0; i < allSubtotal.length; i++) {
-      if (allSubtotal[i].textContent.includes("USD")) {
+      if (allSubtotal[i].textContent.includes("$")) {
         resultado += parseFloat(allSubtotal[i].childNodes[1].textContent)
       }
       else {
@@ -176,10 +175,10 @@ function subTotals() {
         resultado += parseFloat(allSubtotal[i].childNodes[1].textContent) / usd
       }
     }
-    containerSubtotal.innerHTML = ` USD ${resultado.toFixed(2)}`
+    containerSubtotal.innerHTML = ` $ ${resultado.toFixed(2)}`
 
     valueTax(resultado)
-    let taxNumber = parseFloat(containerTax.innerHTML.replace("USD ", ""))
+    let taxNumber = parseFloat(containerTax.innerHTML.replace("$ ", ""))
     console.log(taxNumber)
     final(resultado, taxNumber)
   }
@@ -197,33 +196,47 @@ console.log(shipping)
 for (let input of shipping) {
   console.log("Este es un input", input.value)
 }
-
+let calle = document.getElementById("calle")
+let numero = document.getElementById("numero")
+let esq = document.getElementById("esq")
 function valueTax(resultadoSubtotal) {
   let selectedOption;
-
+ 
   //Recorrido que se detiene al encontrar el valor seleccionado
   for (let i = 0; i < shipping.length; i++) {
     if (shipping[i].checked) {
       selectedOption = shipping[i].value;
+      let opcion = localStorage.setItem("tipo", selectedOption)
       break;
     }
   }
-  let subtotalNumber = parseFloat(containerSubtotal.textContent.replace("USD ", ""))
+  let subtotalNumber = parseFloat(containerSubtotal.textContent.replace("$ ", ""))
   console.log(subtotalNumber)
 
   if (selectedOption === "premium") {
-    let tax = resultadoSubtotal * 0.15
-    containerTax.innerHTML = ` USD ${tax.toFixed(2)}`
-    final(subtotalNumber, tax)
-  }
-  else if (selectedOption === "express") {
-    let tax = resultadoSubtotal * 0.07
-    containerTax.innerHTML = ` USD ${tax.toFixed(2)}`
+    calle.style.display = "block";
+    numero.style.display = "block";
+    esq.style.display = "block";
+    let tax = resultadoSubtotal * 0.20
+    containerTax.innerHTML = `$ ${tax.toFixed(2)}`
     final(subtotalNumber, tax)
   }
   else if (selectedOption === "standard") {
-    let tax = resultadoSubtotal * 0.05
-    containerTax.innerHTML = ` USD ${tax.toFixed(2)}`
+    
+  calle.style.display = "block";
+  numero.style.display = "block";
+  esq.style.display = "block";
+    let tax = resultadoSubtotal * 0.10
+    containerTax.innerHTML = ` $ ${tax.toFixed(2)}`
+    final(subtotalNumber, tax)
+  }
+  else if (selectedOption === "en Local") {
+    
+  calle.style.display = "none";
+  numero.style.display = "none";
+  esq.style.display = "none";
+    let tax = resultadoSubtotal * 0
+    containerTax.innerHTML = ` $ ${tax.toFixed(2)}`
     final(subtotalNumber, tax)
   }
 
@@ -247,229 +260,51 @@ let totalFinal = document.getElementById("totalCart")
 function final(subtotalCart, taxCart) {
   let result = 0
   result += subtotalCart + taxCart
-  totalFinal.textContent = ` USD ${result.toFixed(2)}`
+  totalFinal.textContent = ` $ ${result.toFixed(2)}`
   console.log(result)
 }
 
-// Forma de Pago
-function openModal() {
-  let modal = document.getElementById("myModal");
-  modal.style.display = "block";
-}
-
-function closeModal() {
-  let modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
-
-// Asignar evento al enlace para abrir el modal
-document.getElementById("openModalLink").addEventListener("click", openModal);
 
 
-//funcion forma de pago
-let option1 = document.getElementById("credit_card_option");
-let option2 = document.getElementById("bank_transfer_option");
-let btn_Modal = document.getElementById("openModalLink")
-let cardpass = document.getElementById("validationCustom06");
-let securityCard = document.getElementById("validationCustom07")
-let expiryDay = document.getElementById("validationCustom08")
-let bankpass = document.getElementById("validationCustom09");
-let selectedPaymentMethod = document.getElementById("selectedPaymentMethod");
-let spanHidden = document.getElementById("hiddenSpan")
-let inputsFormCreditCard = document.querySelectorAll("#creditCardFields .form-control")
 
-option1.addEventListener("click", () => {
-  if (option1.checked) {
-    selectedPaymentMethod.innerHTML = ` Tarjeta de crédito`;
-
-    bankpass.disabled = true
-    cardpass.disabled = false;
-    securityCard.disabled = false;
-    expiryDay.disabled = false;
-
-    if (cardpass.getAttribute("required") === null) {
-      cardpass.setAttribute("required", "required")
-      cardpass.setAttribute("pattern", "^[0-9]+$")
-
-      securityCard.setAttribute("required", "required")
-      securityCard.setAttribute("pattern", "^[0-9]+$")
-      expiryDay.setAttribute("required", "required")
-      expiryDay.setAttribute("pattern", "^(0[1-9]|1[0-2])\/[0-9]{2}$")
-    }
-
-
-    bankpass.removeAttribute("required");
-    bankpass.removeAttribute("pattern")
-
-    if (bankpass.value.trim() !== "") {
-      bankpass.value = ""
-    }
-
-    if (bankpass?.classList.contains("is-invalid")) {
-      bankpass?.classList.remove("is-invalid")
-    }
-    if (bankpass?.classList.contains("is-valid")) {
-      bankpass?.classList.remove("is-valid")
-    }
-
-    if (
-      spanHidden.classList.contains("open")) {
-      spanHidden.classList.remove("open")
-    }
-
-    if (btn_Modal.classList.contains("bg-danger")) {
-      btn_Modal.classList.remove("bg-danger")
-    }
-
-    expiryDay.addEventListener("input", function () {
-      const value = expiryDay.value;
-      if (value.length === 2 && !value.includes("/")) {
-        expiryDay.value = value + "/";
-      }
-    })
-
-    inputsFormCreditCard.forEach(inputEmpty => {
-      inputEmpty.classList.add("is-invalid")
-      inputEmpty.addEventListener("input", () => {
-        if (inputEmpty.checkValidity()) {
-          inputEmpty.classList.remove("is-invalid")
-          inputEmpty.classList.add("is-valid")
-        }
-      })
-    })
-
-    inputsFormCreditCard.forEach(inputEmpty => {
-      inputEmpty.addEventListener("input", () => {
-        {
-          {
-            spanHidden.classList.remove("open");
-          }
-        }
-      });
-    });
-
-  }
-});
-
-option2.addEventListener("click", () => {
-  if (option2.checked) {
-    selectedPaymentMethod.innerHTML = ` Transferencia bancaria`;
-
-    cardpass.disabled = true;
-    securityCard.disabled = true;
-    expiryDay.disabled = true;
-    bankpass.disabled = false;
-
-    if (bankpass.getAttribute("required") === null) {
-      bankpass.setAttribute("required", "required")
-      bankpass.setAttribute("pattern", "^[0-9]+$")
-    }
-
-    cardpass.removeAttribute("required");
-    securityCard.removeAttribute("required");
-    expiryDay.removeAttribute("required");
-
-    cardpass.removeAttribute("pattern");
-    securityCard.removeAttribute("pattern");
-    expiryDay.removeAttribute("pattern");
-
-    if (expiryDay.value.trim() !== "" || securityCard.value.trim() !== "" || cardpass.value.trim() !== "") {
-      inputsFormCreditCard.forEach(inputEmpty => {
-        inputEmpty.value = ""
-
-      })
-    }
-
-    inputsFormCreditCard.forEach(inputEmpty => {
-      if (inputEmpty?.classList.contains("is-invalid")) {
-        inputEmpty?.classList.remove("is-invalid")
-      }
-      if (inputEmpty?.classList.contains("is-valid")) {
-        inputEmpty?.classList.remove("is-valid")
-      }
-    })
-
-    if (
-      spanHidden.classList.contains("open")) {
-      spanHidden.classList.remove("open")
-    }
-
-    if (btn_Modal.classList.contains("bg-danger")) {
-      btn_Modal.classList.remove("bg-danger")
-    }
-
-    bankpass.addEventListener("input", () => {
-      if (bankpass.checkValidity) {
-        if (spanHidden.classList.contains("open")) {
-          spanHidden.classList.remove("open")
-        }
-      }
-    })
-    bankpass.classList.add("is-invalid")
-
-    bankpass.addEventListener("input", () => {
-      if (bankpass.checkValidity()) {
-        bankpass.classList.remove("is-invalid")
-        bankpass.classList.add("is-valid")
-      }
-    })
-  }
-});
-
-
-// Modal de exito de compra
-
-let alertTrigger = document.getElementById('liveAlertBtn');
-function finalizarCompra() {
-  if (cart && cart.length > 0) {
-    let comprasExitosas = JSON.parse(localStorage.getItem("compraExitosa")) || [];
-    comprasExitosas = comprasExitosas.concat(cart);
-    localStorage.setItem("compraExitosa", JSON.stringify(comprasExitosas));
-
-    cart = [];
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    alertPlaceholder.style.display = "block"
-    appendAlert('Compra exitosa!', 'success')
-    setTimeout(function () {
-      alertPlaceholder.style.display = "none"
-    }, 2000)
-
-    setTimeout(function () {
-      location.reload()
-    }, 2000)
-
-  }
-
-}
 
 function resetPage() {
   tableBody.innerHTML = '';
-  containerSubtotal.innerHTML = ` USD 0`;
-  containerTax.innerHTML = ` USD 0`;
-  totalFinal.textContent = ` USD 0`;
+  containerSubtotal.innerHTML = ` $ 0`;
+  containerTax.innerHTML = ` $ 0`;
+  totalFinal.textContent = `$ 0`;
 };
 
 if (cart === null) {
-  showproduct()
-  location.reload()
+  console.log("Carro vacio")
+  tableBody.innerHTML = '';
+  containerSubtotal.innerHTML = ` $ 0`;
+  containerTax.innerHTML = ` $ 0`;
+  totalFinal.textContent = `$ 0`;
 } else {
   products_add()
   subTotals()
+}
+
+function finalizarCompra(){
+  let name = document.getElementById("validationCustom02").value
+  localStorage.setItem("nombre", name)
+  console.log("Funciona")
+  location.replace("whatsapp.html")
 }
 
 
 (() => {
   'use strict'
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  
   const forms = document.querySelectorAll('.needs-validation')
 
-  // Loop over them and prevent submission
+  
   Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
 
-      if (cart && cart.length === 0) {
+      if (cart && cart.length === 0 || cart == null) {
         alertPlaceholder.style.display = "block"
         appendAlert('Agregue un producto al carrito!', 'danger')
         setTimeout(function () {
@@ -479,18 +314,15 @@ if (cart === null) {
         event.stopPropagation()
       } else {
 
-        if (!form.checkValidity()) {
-
-          alertPlaceholder.style.display = "block"
-          appendAlert('Complete todos los campos!', 'danger')
-          if (!option1.checked && !option2.checked) {
-            btn_Modal.classList.add("bg-danger")
-            spanHidden.classList.add("open")
-            inputsFormCreditCard.forEach(inputEmpty => {
-              inputEmpty.classList.add("is-invalid")
-            })
-            bankpass.classList.add("is-invalid")
-          }
+        if( calle.style.display === "none"&&
+          numero.style.display === "none"&&
+          esq.style.display === "none"){
+            finalizarCompra();
+            event.preventDefault()
+        }
+        
+        
+        else if (!form.checkValidity()) {
           setTimeout(function () {
             alertPlaceholder.style.display = "none"
           }, 2000)

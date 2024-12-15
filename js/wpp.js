@@ -1,11 +1,29 @@
     const companyPhone = '59894510882';
 
 window.onload=()=>{
-    if (localStorage.getItem("nombre")) {
+    if (localStorage.getItem("consulta")&&!localStorage.getItem("cart")) {
         let message = document.getElementById('message');
-        let consulta = localStorage.getItem("nombre");
+        let consulta = localStorage.getItem("consulta");
         message.value = `Hola! Quería consultar acerca de ${consulta}.`;
-    } else {
+    } else if (localStorage.getItem("nombre")&&localStorage.getItem("cart")&&!localStorage.getItem("calle")){
+        let messageArea = document.getElementById('message');
+        let nombre = localStorage.getItem("nombre");
+        let articulos = JSON.parse(localStorage.getItem("cart"))
+        let opcion = JSON.parse(localStorage.getItem("opcion"))
+        console.log(articulos)
+        let message = `Hola! Mi nombre es ${nombre}. Confirmé la compra de `
+
+        for (let articulo of articulos[0].articles){
+           message += ` ${articulo.count} unidades de ${articulo.name} 
+            `
+        }
+        message += `Mi preferencia de retiro es ${opcion}`;
+
+        messageArea.value= message
+    } else if (localStorage.getItem("nombre")&&localStorage.getItem("cart")&&localStorage.getItem("calle")){
+
+    }
+    else {
         message.value = message.value.trim()
     }
 }

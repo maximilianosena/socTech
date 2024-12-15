@@ -1,4 +1,6 @@
-const CATEGORIES_URL = "js/categories.json";
+const CATEGORIES_URL = "https://api.soctech-uy.com/categorias";
+const PRODUCTS_URL = "https://japceibal.github.io/categoria/";
+const PRODUCT_INFO_URL = "https://japceibal.github.io/producto/";
 const EXT_TYPE = ".json";
 
 let showSpinner = function () {

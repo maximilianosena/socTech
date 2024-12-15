@@ -24,46 +24,51 @@
   <br>
 
   <nav class="navbar bg-body-tertiary custom-navbar">
-      <div class="container-fluid">
-          <a class="navbar-brand" href="index.html" style="color: #E0E7EF;">Tu mejor solución</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-              aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-              aria-labelledby="offcanvasNavbarLabel">
-              <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">SOC Tech</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                      <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="somos.html">Quienes somos</a>
-                      </li>
-                      <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                              aria-expanded="false">
-                              Servicios
-                          </a>
-                          <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="reparaciones.html">Reparaciones</a></li>
-                              <li><a class="dropdown-item" href="software.html">Fallas de Software</a></li>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html" style="color: #E0E7EF;">Tu mejor solución</a>
+        <a class="navbar-brand ms-auto"  aria-current="page" href="cart.html"><img src="imgs/carrito-de-compras-24.png" alt=""></a>
 
-                          </ul>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link disabled" href="#">Tienda</a>
-                      </li>
-                  </ul>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">SOC Tech</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="somos.html" style="color: black;">Quienes somos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="color: black;">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="reparaciones.html">Reparaciones</a></li>
+                            <li><a class="dropdown-item" href="software.html">Fallas de Software</a></li>
 
-              </div>
-          </div>
-      </div>
-  </nav>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link ms-auto" style="color: black;" aria-current="page" href="cart.html" target="_blank"><img src="imgs/carrito-de-compras.png" alt="">Carrito</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
   <br>
   <main>
     <div class="text-center p-4">
@@ -93,16 +98,16 @@
   <div class="containerWrapper">
     <div class="containerCart">
       <div class="type-send">
-        <h2 class="text-center">Tipo de Envío</h2>
+        <h2 class="text-center">Preferencia de Retiro</h2>
         <div class="row justify-content-md-center">
         <label>
-          <input type="radio" name="shipping_option" value="premium" class="col-sm-2"> Premium 2 a 5 días (15%)
+          <input type="radio" name="shipping_option" value="premium" class="col-sm-2"> Premium: A domicilio (2 a 4 días)
         </label>
         <label>
-          <input type="radio" name="shipping_option" value="express" class="col-sm-2"> Express 5 a 8 días (7%)
+          <input type="radio" name="shipping_option" value="standard" class="col-sm-2"> Standard: A domicilio (5 a 8 días) 
         </label>
         <label>
-          <input type="radio" name="shipping_option" value="standard"  class="col-sm-2" checked> Standard 12 a 15 días (5%)
+          <input type="radio" name="shipping_option" value="en Local"  class="col-sm-2" checked> Retiro en Local
         </label>
       </div>
     
@@ -114,13 +119,21 @@
         <div class="col-12">
           <div class="row">
             <div class="col-lg-8 col-sm-2 col-md-8">
+              <label for="validationCustom03" class="form-label"  >Nombre</label>
+              <input type="text" class="form-control " id="validationCustom02"  required pattern="^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$">
+              <div class="invalid-feedback">
+                Ingrese su nombre.
+              </div>
+            </div>
+          <div class="row">
+            <div class="col-lg-8 col-sm-2 col-md-8" id="calle">
               <label for="validationCustom03" class="form-label" >Calle</label>
               <input type="text" class="form-control " id="validationCustom03"  required pattern="^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$">
               <div class="invalid-feedback">
                 Agregue una calle.
               </div>
             </div>
-            <div class="col-lg-8 col-sm-2 col-md-4">
+            <div class="col-lg-8 col-sm-2 col-md-4" id="numero">
               <label for="validationCustom04" class="form-label">Número</label>
               <input type="text" class="form-control" id="validationCustom04" required pattern="^[a-zA-Z0-9\s]+$">
               <div class="invalid-feedback">
@@ -128,7 +141,7 @@
               </div>
             </div>
           
-        <div class="col-lg-8 col-sm-2 col-md-10">
+        <div class="col-lg-8 col-sm-2 col-md-10" id="esq">
           <label for="validationCustom05" class="form-label">Esquina</label>
           <input type="text" class="form-control" id="validationCustom05" required pattern="^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$">
           <div class="invalid-feedback">
@@ -142,105 +155,8 @@
   </div>
   </div>
 
-  <!-- Código de Forma de Pago -->
-  <div class="payMethod">
-    <h2>Forma de Pago</h2>
-    <span id="selectedPaymentMethod">No ha seleccionado</span> 
-    <a id="openModalLink">Seleccionar</a>
-    <span> <small class="text-danger" id="hiddenSpan">&#10132; Ingrese datos válidos</small></span>
-    <hr>
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        
-        <h2>Forma de Pago</h2>
-        <div class="payment-option">
-        <ul>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-        </ul>
-       
-          <div class="col-12 col-sm-12">
-            <div class="row">
-              <div class="col-10">
-
-
-                <div>
-                  <input type="radio" name="payment" value="credit_card" id="credit_card_option">
-                  <label for="credit_card_option">Tarjeta de Crédito</label>
-                </div>
-
-                <ul>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                </ul>
-
-                <div id="creditCardFields" class="payment_fields">
-                  <label for="validationCustom06" class="form-label">Número de tarjeta</label>
-                  <input type="text" class="form-control" id="validationCustom06" required pattern="^[0-9]+$">
-                  <div class="invalid-feedback">
-                    Agregue el numero de su tarjeta.
-                  </div>
-
-                  <label for="validationCustom07" class="form-label">Código de seg.</label>
-                  <input type="text" class="form-control" id="validationCustom07" required pattern="^[0-9]+$"> 
-                  <div class="invalid-feedback">
-                    Agregue el código de seguridad.
-                  </div>
-
-                  <label for="validationCustom08" class="form-label">Vencimiento (MM/AA)</label>
-                  <input type="text" class="form-control" id="validationCustom08" maxlength="5" pattern="^(0[1-9]|1[0-2])\/[0-9]{2}$">
-                  <div class="invalid-feedback">
-                    Agregue la fecha de vencimiento.
-                  </div>
-                </div>
-
-                <ul>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                </ul>
-
-                <div class="payment-option">
-                  <input type="radio" name="payment" value="bank_transfer" id="bank_transfer_option">
-                  <label for="bank_transfer_option"> Transferencia Bancaria</label>
-
-                </div>
-                <ul>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                </ul>
-
-                <div id="bankTransferFields" class="payment-fields">
-                  <label for="validationCustom09" class="form-label">Número de cuenta</label>
-                  <input type="text" class="form-control" id="validationCustom09" required pattern="^[0-9]+$">
-                  <div class="invalid-feedback">
-                    Agregue el número de su cuenta.
-                  </div>
-                </div>
-
-                <ul>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                </ul>
-
-                <a id="custom-button" onclick="closeModal()">Cerrar</a>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-      </div>
-    </div>
-
+  
+  
 
 
     <div class="col-12">
@@ -261,21 +177,8 @@
     </div>
   </div>
 
-  <div id="successModal" class="modal">
-    <div class="modal-content">
-      <span class="close"></span>
-      <p>¡Compra realizada exitosamente!</p>
-      <button id="closeSuccessModalButton">Cerrar</button>
-    </div>
-  </div>
 
-  <div id="emptyModal" class="modal">
-    <div class="modal-content">
-      <span class="close"></span>
-      <p>El carrito está vacío. Agregue productos antes de finalizar su compra.</p>
-      <button id="closeEmptyModalButton" >Cerrar</button>
-    </div>
-  </div>
+      
 
   <div id="liveAlertPlaceholder"></div>
   <div class="container mt-4">  

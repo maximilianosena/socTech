@@ -6,44 +6,44 @@ const product = localStorage.getItem("productID")
 
 
 //Mostrar producto
-let title = document.getElementById("title")
+let title = document.getElementById("titleProducto")
 let things = document.getElementById("showP")
 let firstImage = document.getElementById("firstImage")
 let restImages = document.getElementById("restImages")
 let showImages = document.getElementById("showImages")
 
 function showTheProduct(object) {
-    console.log(object[0].images)
+    console.log(object.images)
     title.innerHTML += `
     <div class="h1 text-center" id="titleProduct">
-    ${object[0].name} 
+    ${object.name} 
     </div>
     `
 
-    firstImage.innerHTML += `<div class="carousel-item active"><img src=${object[0].images[0]} class="d-block w-100" alt="..."></div>`
+    firstImage.innerHTML += `<div class="carousel-item active"><img src=${object.images[0]} class="d-block w-100" alt="..."></div>`
 
-    for (let i = 1; i < object[0].images.length; i++) {
-        firstImage.innerHTML += `<div class="carousel-item"><img src=${object[0].images[i]} class="d-block w-100" alt="..."></div>`
+    for (let i = 1; i < object.images.length; i++) {
+        firstImage.innerHTML += `<div class="carousel-item"><img src=${object.images[i]} class="d-block w-100" alt="..."></div>`
     }
 
     things.innerHTML += `
     <div class=product-info>
     <div id="priceProduct">
-    ${object[0].currency}${object[0].cost} 
+    ${object.currency}${object.cost} 
     </div>
     <div id="descriptionProduct">
-    Descripción:${object[0].description} 
+    Descripción:${object.description} 
     </div>
     `
     things.innerHTML += `<h5>Productos Relacionados:</h5>`
-    for (let product of object[0].relatedProducts) {
+    for (let product of object.relatedProducts) {
         things.innerHTML += `<div class=related-product onclick="setProductID(${product.id})" style="cursor:pointer;">${product.name} <img src=${product.image} height=150px></div>`
     }
 }
 
 
 
-let urlProduct = 'js/' + product + '.json'
+let urlProduct = `https://api.soctech-uy.com/producto/${product}`
 async function showproduct() {
     let response = await fetch(urlProduct);
     if (response.ok) {
@@ -76,12 +76,9 @@ let products_Cart = JSON.parse(localStorage.getItem("cart")) || []
 console.log(products_Cart)
 
 
-let nameUser = localStorage.getItem("storedEmail")
-
 function addProduct(cart_product) {
 
     let newProduct = {
-        "user": nameUser,
         "articles": [
             {
                 "id": cart_product.id,
