@@ -192,13 +192,26 @@ let containerSubtotal = document.getElementById("subAll")
 
 console.log(shipping)
 
+let forma  = document.getElementsByName("form_option")
 
-for (let input of shipping) {
-  console.log("Este es un input", input.value)
-}
+
 let calle = document.getElementById("calle")
 let numero = document.getElementById("numero")
 let esq = document.getElementById("esq")
+
+function tipoPago(){
+
+  for (let i = 0; i < forma.length; i++) {
+    forma[i].addEventListener("click", () => {
+      console.log("Esta es la forma", forma[i].value)
+      localStorage.setItem("pago", forma[i].value)
+        })
+}
+
+}
+
+tipoPago()
+
 function valueTax(resultadoSubtotal) {
   let selectedOption;
  
@@ -213,23 +226,23 @@ function valueTax(resultadoSubtotal) {
   let subtotalNumber = parseFloat(containerSubtotal.textContent.replace("$ ", ""))
   console.log(subtotalNumber)
 
-  if (selectedOption === "premium") {
+  if (selectedOption === "UES") {
     calle.style.display = "block";
     numero.style.display = "block";
     esq.style.display = "block";
-    let tax = resultadoSubtotal * 0.20
+    let tax = 180
     containerTax.innerHTML = `$ ${tax.toFixed(2)}`
     final(subtotalNumber, tax)
   }
-  else if (selectedOption === "standard") {
+  else if (selectedOption === "DAC") {
     
-  calle.style.display = "block";
-  numero.style.display = "block";
-  esq.style.display = "block";
-    let tax = resultadoSubtotal * 0.10
-    containerTax.innerHTML = ` $ ${tax.toFixed(2)}`
-    final(subtotalNumber, tax)
-  }
+    calle.style.display = "block";
+    numero.style.display = "block";
+    esq.style.display = "block";
+      let tax = 213
+      containerTax.innerHTML = ` $ ${tax.toFixed(2)}`
+      final(subtotalNumber, tax)
+    }
   else if (selectedOption === "en Local") {
     
   calle.style.display = "none";
@@ -262,6 +275,7 @@ function final(subtotalCart, taxCart) {
   result += subtotalCart + taxCart
   totalFinal.textContent = ` $ ${result.toFixed(2)}`
   console.log(result)
+  localStorage.setItem("totalPagar", result)
 }
 
 
@@ -288,10 +302,19 @@ if (cart === null) {
 
 function finalizarCompra(){
   let name = document.getElementById("validationCustom02").value
-  localStorage.setItem("nombre", name)
-  console.log("Funciona")
-  location.replace("whatsapp.html")
-}
+  if( calle.style.display === "none"&&
+    numero.style.display === "none"&&
+    esq.style.display === "none"){
+      localStorage.setItem("nombre", name)
+    console.log("Funciona")
+    location.replace("whatsapp.html")
+    } else {
+         localStorage.setItem("nombre", name)
+         localStorage.setItem("calle", calle)
+          localStorage.setItem("esq", esq)
+          localStorage.setItem("numero", numero)
+          location.replace("whatsapp.html")
+}}
 
 
 (() => {
@@ -319,7 +342,7 @@ function finalizarCompra(){
           esq.style.display === "none"){
             finalizarCompra();
             event.preventDefault()
-        }
+        } 
         
         
         else if (!form.checkValidity()) {

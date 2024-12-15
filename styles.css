@@ -77,7 +77,15 @@ body{
 .navbar-toggler, .navbar-toggler-icon{
     background-color: #E0E7EF;
 }
+.navbar {
+  justify-content: space-between;
+  width: 100%;
+  margin: 0; /* Asegura que no haya márgenes */
+}
 
+#validationCustom05{
+  margin-bottom: 5%;
+}
 #carousel {
     width: 50%;
     margin: 0 auto;
@@ -364,9 +372,7 @@ color: #333;
     width: 100%;
     margin: 0 auto;
   }
-    .navbar {
-        justify-content: space-between;
-    }
+   
 
     #titleProducto{
       position: relative; 
@@ -670,12 +676,24 @@ h5 {
   /* Escala la imagen al 110% en hover */
 }
 /* Estilo para la tabla */
-.table {
+.table{
   width: 100%;
   border-collapse: collapse;
-  background-color: #fff;
+  background-color: #4cbcc9;
   border-radius: 20px;
+  margin: 0 auto;
 }
+
+.address-send {
+  width: 50%;
+  border-collapse: collapse;
+  background-color: #4cbcc9;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 
 .table th,
 .table td {
@@ -685,17 +703,17 @@ h5 {
 
 
 #subAll {
-  color: #ff9f1a;
+  color: #0E3B5A;
   font-weight: bold;
 }
 
 #shipType {
-  color: #ff9f1a;
+  color: #0E3B5A;
   font-weight: bold;
 }
 
 #totalCart {
-  color: #ff9f1a;
+  color: #0E3B5A;
   font-weight: bold;
 }
 
@@ -805,9 +823,10 @@ input[type="text"] {
 }
 
 #finalizePurchase {
-  margin-left: 24.5%;
+  margin: 0 auto;
   padding-left: 20%;
   padding-right: 20%;
+  align-items: center;
   background-color:#0E3B5A;
   border-color: #0E3B5A;
 
