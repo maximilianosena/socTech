@@ -199,6 +199,8 @@ let calle = document.getElementById("calle")
 let numero = document.getElementById("numero")
 let esq = document.getElementById("esq")
 
+localstorage.getItem("pago")?localstorage.getItem("pago"):localStorage.setItem("pago","en Local")
+
 function tipoPago(){
 
   for (let i = 0; i < forma.length; i++) {
