@@ -203,6 +203,17 @@ localstorage.getItem("pago")?localstorage.getItem("pago"):localStorage.setItem("
 
 function tipoPago(){
 
+
+  let selectedOption;
+
+  //Recorrido que se detiene al encontrar el valor seleccionado
+  for (let i = 0; i < forma.length; i++) {
+    if (forma[i].checked) {
+      selectedOption = forma[i].value;
+      let opcion = localStorage.setItem("pago", selectedOption)
+      break;
+    }
+
   for (let i = 0; i < forma.length; i++) {
     forma[i].addEventListener("click", () => {
       console.log("Esta es la forma", forma[i].value)
