@@ -200,27 +200,25 @@ let numero = document.getElementById("numero")
 let esq = document.getElementById("esq")
 
 
-
-function tipoPago(){
-
-
+function tipoPago() {
   let selectedOption;
 
   //Recorrido que se detiene al encontrar el valor seleccionado
   for (let i = 0; i < forma.length; i++) {
     if (forma[i].checked) {
       selectedOption = forma[i].value;
-      let opcion = localStorage.setItem("pago", selectedOption)
+      localStorage.setItem("pago", selectedOption);
       break;
     }
+  }
 
+  // Agrega los listeners para detectar clicks en las opciones de pago
   for (let i = 0; i < forma.length; i++) {
     forma[i].addEventListener("click", () => {
-      console.log("Esta es la forma", forma[i].value)
-      localStorage.setItem("pago", forma[i].value)
-        })
-}
-
+      console.log("Esta es la forma", forma[i].value);
+      localStorage.setItem("pago", forma[i].value);
+    });
+  }
 }
 
 tipoPago()
