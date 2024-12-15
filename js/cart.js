@@ -178,6 +178,7 @@ function subTotals() {
     containerSubtotal.innerHTML = ` $ ${resultado.toFixed(2)}`
 
     valueTax(resultado)
+    tipoPago()
     let taxNumber = parseFloat(containerTax.innerHTML.replace("$ ", ""))
     console.log(taxNumber)
     final(resultado, taxNumber)
@@ -221,7 +222,7 @@ function tipoPago() {
   }
 }
 
-tipoPago()
+
 
 function valueTax(resultadoSubtotal) {
   let selectedOption;
