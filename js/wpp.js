@@ -9,7 +9,7 @@ window.onload=()=>{
         let messageArea = document.getElementById('message');
         let nombre = localStorage.getItem("nombre");
         let articulos = JSON.parse(localStorage.getItem("cart"))
-        let opcion = JSON.parse(localStorage.getItem("opcion"))
+        
         console.log(articulos)
         let message = `Hola! Mi nombre es ${nombre}. Confirmé la compra de `
 
@@ -17,6 +17,7 @@ window.onload=()=>{
            message += ` ${articulo.count} unidades de ${articulo.name} 
             `
         }
+let opcion = JSON.parse(localStorage.getItem("opcion"))
         message += `Mi preferencia de retiro es ${opcion}`;
 
         messageArea.value= message
