@@ -196,11 +196,18 @@ console.log(shipping)
 let forma  = document.getElementsByName("form_option")
 
 
-let calle = document.getElementById("validationCustom03")
-let numero = document.getElementById("validationCustom04")
-let esq = document.getElementById("validationCustom05")
-let adicional = document.getElementById.("validationCustom06")
-let celular = document.getElementById.("validationCustom01")
+let calle = document.getElementById("calle")
+let numero = document.getElementById("numero")
+let esq = document.getElementById("esq")
+let adicional = document.getElementById.("adicionales")
+let celular = document.getElementById.("numeroTel")
+
+
+let input_calle = document.getElementById("validationCustom03")
+let input_numero = document.getElementById("validationCustom04")
+let input_esq = document.getElementById("validationCustom05")
+let input_adicional = document.getElementById.("validationCustom06")
+let input_celular = document.getElementById.("validationCustom01")
 
 function tipoPago() {
   let selectedOption;
@@ -329,11 +336,11 @@ function finalizarCompra(){
     location.replace("whatsapp.html")
     } else {
          localStorage.setItem("nombre", name)
-         localStorage.setItem("calle", calle)
-          localStorage.setItem("esq", esq)
-          localStorage.setItem("numero", numero)
-localStorage.setItem("celular", celular)
-localStorage.setItem("adicional", adicional)
+         localStorage.setItem("calle", input_calle.value)
+          localStorage.setItem("esq", input_esq.value)
+          localStorage.setItem("numero", input_numero.value)
+localStorage.setItem("celular", input_celular.value)
+localStorage.setItem("adicional", input_adicional.value)
           location.replace("whatsapp.html")
 }}
 
