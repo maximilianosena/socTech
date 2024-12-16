@@ -199,15 +199,15 @@ let forma  = document.getElementsByName("form_option")
 let calle = document.getElementById("calle")
 let numero = document.getElementById("numero")
 let esq = document.getElementById("esq")
-let adicional = document.getElementById.("adicionales")
-let celular = document.getElementById.("numeroTel")
+let adicional = document.getElementById("adicionales")
+let celular = document.getElementById("numeroTel")
 
 
 let input_calle = document.getElementById("validationCustom03")
 let input_numero = document.getElementById("validationCustom04")
 let input_esq = document.getElementById("validationCustom05")
-let input_adicional = document.getElementById.("validationCustom06")
-let input_celular = document.getElementById.("validationCustom01")
+let input_adicional = document.getElementById("validationCustom06")
+let input_celular = document.getElementById("validationCustom01")
 
 function tipoPago() {
   let selectedOption;
