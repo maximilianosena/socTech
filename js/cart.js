@@ -196,10 +196,11 @@ console.log(shipping)
 let forma  = document.getElementsByName("form_option")
 
 
-let calle = document.getElementById("calle")
-let numero = document.getElementById("numero")
-let esq = document.getElementById("esq")
-
+let calle = document.getElementById("validationCustom03")
+let numero = document.getElementById("validationCustom04")
+let esq = document.getElementById("validationCustom05")
+let adicional = document.getElementById.("validationCustom06")
+let celular = document.getElementById.("validationCustom01")
 
 function tipoPago() {
   let selectedOption;
@@ -242,6 +243,8 @@ function valueTax(resultadoSubtotal) {
     calle.style.display = "block";
     numero.style.display = "block";
     esq.style.display = "block";
+    celular.style.display = "block";
+    adicional.style.display = "block";
     let tax = 180
     containerTax.innerHTML = `$ ${tax.toFixed(2)}`
     final(subtotalNumber, tax)
@@ -251,6 +254,8 @@ function valueTax(resultadoSubtotal) {
     calle.style.display = "block";
     numero.style.display = "block";
     esq.style.display = "block";
+celular.style.display = "block";
+    adicional.style.display = "block";
       let tax = 213
       containerTax.innerHTML = ` $ ${tax.toFixed(2)}`
       final(subtotalNumber, tax)
@@ -260,6 +265,8 @@ function valueTax(resultadoSubtotal) {
   calle.style.display = "none";
   numero.style.display = "none";
   esq.style.display = "none";
+celular.style.display = "none";
+    adicional.style.display = "none";
     let tax = resultadoSubtotal * 0
     containerTax.innerHTML = ` $ ${tax.toFixed(2)}`
     final(subtotalNumber, tax)
@@ -325,6 +332,8 @@ function finalizarCompra(){
          localStorage.setItem("calle", calle)
           localStorage.setItem("esq", esq)
           localStorage.setItem("numero", numero)
+localStorage.setItem("celular", celular)
+localStorage.setItem("adicional", adicional)
           location.replace("whatsapp.html")
 }}
 
