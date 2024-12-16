@@ -261,7 +261,7 @@ function valueTax(resultadoSubtotal) {
     calle.style.display = "block";
     numero.style.display = "block";
     esq.style.display = "block";
-celular.style.display = "block";
+    celular.style.display = "block";
     adicional.style.display = "block";
       let tax = 213
       containerTax.innerHTML = ` $ ${tax.toFixed(2)}`
@@ -269,10 +269,10 @@ celular.style.display = "block";
     }
   else if (selectedOption === "en Local") {
     
-  calle.style.display = "none";
-  numero.style.display = "none";
-  esq.style.display = "none";
-celular.style.display = "none";
+    calle.style.display = "none";
+    numero.style.display = "none";
+    esq.style.display = "none";
+    celular.style.display = "none";
     adicional.style.display = "none";
     let tax = resultadoSubtotal * 0
     containerTax.innerHTML = ` $ ${tax.toFixed(2)}`
