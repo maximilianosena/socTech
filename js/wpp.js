@@ -29,14 +29,17 @@ window.onload=()=>{
         let nombre = localStorage.getItem("nombre");
         let articulos = JSON.parse(localStorage.getItem("cart"))
         let metodo = localStorage.getItem("pago")
+        let numeroCel =  localStorage.getItem("celular")
         let opcion = localStorage.getItem("tipo")
         let total = localStorage.getItem("totalPagar")
-        let calle = localStorage.getItem("calle", calle)
-        let esq = localStorage.getItem("esq", esq)
-        let numero =  localStorage.getItem("numero", numero)
+        let calle = localStorage.getItem("calle")
+        let esq = localStorage.getItem("esq")
+        let numero =  localStorage.getItem("numero")
         let messageArea = document.getElementById('message');
+        let extra =  localStorage.getItem("adicional")
 
-        let message = `Hola! Mi nombre es ${nombre}. `
+        let message = `Hola! Mi nombre es ${nombre}.\n`
+         message += `Celular de contacto: ${numeroCel}.\n`
 for (let articulo of articulos[0].articles){
            message += `Confirmé la compra de ${articulo.count} unidades de ${articulo.name}.\n`
         }
@@ -46,6 +49,7 @@ for (let articulo of articulos[0].articles){
 
 message +=`-Mi dirección es: ${calle} ${numero}, esquina ${esq}.\n`;
 message += `-Mi preferencia de pago es: ${metodo}.\n`;
+message += `-Datos adicionales: ${extra!=null?extra:"-"}.\n`;
         message += `\n`
         message += `Espero su confirmación, muchas gracias!`
         messageArea.value= message
