@@ -5,6 +5,12 @@ let list = [];
 
 console.log("lista", list)
 
+localStorage.setItem("nombre", "")
+         localStorage.setItem("calle", "")
+          localStorage.setItem("esq", "")
+          localStorage.setItem("numero", "")
+localStorage.setItem("celular", "")
+localStorage.setItem("adicional", "")
 
 let resultadoSubtotal;
 /////////////////////////////////////////////////////////////
