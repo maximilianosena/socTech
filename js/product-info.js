@@ -1,7 +1,6 @@
 
 
-const product = localStorage.getItem("productID")
-
+const product = localStorage.getItem("productID") === null ? "1001" : localStorage.getItem("productID");
 
 
 

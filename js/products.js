@@ -34,7 +34,8 @@ function showProducts(array) {
 
 
 //Buscador de categorias
-const categories = localStorage.getItem("catID")?localStorage.getItem("catID"):"101"
+const categories = localStorage.getItem("catID")===null?"101":localStorage.getItem("catID")
+
 
 console.log(" Numero de categoria: " + categories)
 
