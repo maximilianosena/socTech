@@ -657,7 +657,9 @@ h5 {
   font-weight: bold;
 }
 
-
+.list-group{
+  cursor: pointer;
+}
 
 .related-product img {
   width: 150px; /* Fija el ancho */
