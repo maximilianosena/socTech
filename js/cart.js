@@ -5,12 +5,12 @@ let list = [];
 
 console.log("lista", list)
 
-localStorage.setItem("nombre", "")
-         localStorage.setItem("calle", "")
-          localStorage.setItem("esq", "")
-          localStorage.setItem("numero", "")
-localStorage.setItem("celular", "")
-localStorage.setItem("adicional", "")
+localStorage.removeItem("nombre")
+localStorage.removeItem("calle")
+localStorage.removeItem("esq")
+localStorage.removeItem("numero")
+localStorage.removeItem("celular")
+localStorage.removeItem("adicional")
 
 let resultadoSubtotal;
 /////////////////////////////////////////////////////////////
@@ -185,7 +185,7 @@ function subTotals() {
 
     valueTax(resultado)
     tipoPago()
-    let taxNumber = parseFloat(containerTax.innerHTML.replace("$ ", ""))
+    let taxNumber = parseFloat(containerTax.innerHTML.replace(/[^0-9.]/g, ""))
     console.log(taxNumber)
     final(resultado, taxNumber)
   }
@@ -249,7 +249,7 @@ function valueTax(resultadoSubtotal) {
       break;
     }
   }
-  let subtotalNumber = parseFloat(containerSubtotal.textContent.replace("$ ", ""))
+  let subtotalNumber = parseFloat(containerSubtotal.textContent.replace(/[^0-9.]/g, ""))
   console.log(subtotalNumber)
 
   if (selectedOption === "UES") {
@@ -315,6 +315,7 @@ function final(subtotalCart, taxCart) {
 
 
 function resetPage() {
+  
   tableBody.innerHTML = '';
   containerSubtotal.innerHTML = ` $ 0`;
   containerTax.innerHTML = ` $ 0`;
