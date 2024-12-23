@@ -40,8 +40,9 @@ window.onload=()=>{
 
         let message = `Hola! Mi nombre es ${nombre}.\n`
          message += `Celular de contacto: ${numeroCel}.\n`
-for (let articulo of articulos[0].articles){
-           message += `Confirmé la compra de ${articulo.count} unidades de ${articulo.name}.\n`
+         message += `Confirmé la compra de: \n`
+for (let i=0; i<articulos.length; i++){
+           message += `${articulos[i].articles[0].count} unidades de ${articulos[i].articles[0].name}.\n`
         }
         message += `\n`
         message +=`-Por un total de: $${total}.\n`
