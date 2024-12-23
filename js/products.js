@@ -60,8 +60,8 @@ fetch(url)
 
 let btn_increase = document.getElementById("sortAsc")
 let btn_decrease = document.getElementById("sortDesc")
-let btn_relevance = document.getElementById("sortByCount")
-
+let btn_filter = document.getElementById("rangeFilterCount");
+let btn_clear = document.getElementById("clearRangeFilter");
 
 btn_increase.addEventListener("click", function () {
   container.innerHTML = "";
@@ -70,6 +70,7 @@ btn_increase.addEventListener("click", function () {
     return a.cost - b.cost
   })
   console.log(increase)
+  
   showProducts(increase)
 })
 
@@ -83,18 +84,6 @@ btn_decrease.addEventListener("click", function () {
   console.log(decrease)
   showProducts(decrease)
 })
-
-
-btn_relevance.addEventListener("click", function () {
-  container.innerHTML = "";
-
-  let decrease = products.sort((a, b) => {
-    return b.soldCount - a.soldCount
-  })
-  console.log(decrease)
-  showProducts(decrease)
-}
-)
 
 
 //Código buscador
@@ -124,8 +113,7 @@ search.addEventListener('input', function () {
 
 //Codigo filtrado por precio
 
-let btn_filter = document.getElementById("rangeFilterCount");
-let btn_clear = document.getElementById("clearRangeFilter");
+
 let price_min = document.getElementById("rangeFilterCountMin");
 let price_max = document.getElementById("rangeFilterCountMax");
 
@@ -155,10 +143,10 @@ btn_filter.addEventListener("click", function () {
 );
 
 btn_clear.addEventListener("click", function () {
-  document.getElementById("rangeFilterCountMin").value = "";
-  document.getElementById("rangeFilterCountMax").value = "";
+  console.log(btn_clear)
+  price_min.value = "";
+  price_max.value = "";
 
   container.innerHTML = "";
   showProducts(products);
 });
-
