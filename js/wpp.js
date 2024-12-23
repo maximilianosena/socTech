@@ -13,10 +13,12 @@ window.onload=()=>{
         let opcion = localStorage.getItem("tipo")
         let total = localStorage.getItem("totalPagar")
         console.log(articulos)
-        let message = `Hola! Mi nombre es ${nombre}. `
-
-        for (let articulo of articulos[0].articles){
-           message += `Confirmé la compra de ${articulo.count} unidades de ${articulo.name}.\n`
+        let message = `Hola! Mi nombre es ${nombre}. \n`
+        message += `Confirmé la compra de: \n`
+        for (let i = 0; i < articulos.length; i++) {
+            for (let j = 0; j < articulos[i].articles.length; j++) {
+                message += `${articulos[i].articles[j].count} unidades de ${articulos[i].articles[j].name}.\n`;
+            }
         }
         message += `\n`
         message +=`-Por un total de: $${total}.\n`
@@ -27,7 +29,7 @@ window.onload=()=>{
         messageArea.value= message
     } else if (localStorage.getItem("nombre")&&localStorage.getItem("cart")&&localStorage.getItem("calle")){
         let nombre = localStorage.getItem("nombre");
-        let articulos = JSON.parse(localStorage.getItem("cart"))
+        let articulos = JSON.parse(localStorage.getItem("cart"));
         let metodo = localStorage.getItem("pago")
         let numeroCel =  localStorage.getItem("celular")
         let opcion = localStorage.getItem("tipo")
@@ -37,12 +39,13 @@ window.onload=()=>{
         let numero =  localStorage.getItem("numero")
         let messageArea = document.getElementById('message');
         let extra =  localStorage.getItem("adicional")
-
         let message = `Hola! Mi nombre es ${nombre}.\n`
          message += `Celular de contacto: ${numeroCel}.\n`
          message += `Confirmé la compra de: \n`
-for (let i=0; i<articulos.length; i++){
-           message += `${articulos[i].articles[0].count} unidades de ${articulos[i].articles[0].name}.\n`
+         for (let i = 0; i < articulos.length; i++) {
+            for (let j = 0; j < articulos[i].articles.length; j++) {
+                message += `${articulos[i].articles[j].count} unidades de ${articulos[i].articles[j].name}.\n`;
+            }
         }
         message += `\n`
         message +=`-Por un total de: $${total}.\n`
