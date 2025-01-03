@@ -30,6 +30,7 @@ function products_add() {
       list.push(product);
     }
   });
+  localStorage.setItem("cart", JSON.stringify(list));
   for (let product of list) {
     showTheProduct(product);
   }
