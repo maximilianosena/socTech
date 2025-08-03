@@ -338,7 +338,6 @@ function finalizarCompra(){
 
   let inputNombre = document.getElementById("validationCustom02");
 if (!inputNombre.checkValidity()) {
-  alert("Por favor ingrese un nombre válido");
   return;
 }
 
