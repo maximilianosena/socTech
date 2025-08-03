@@ -335,10 +335,17 @@ if (cart === null) {
 }
 
 function finalizarCompra(){
+
+  let inputNombre = document.getElementById("validationCustom02");
+if (!inputNombre.checkValidity()) {
+  alert("Por favor ingrese un nombre válido");
+  return;
+}
+
   let name = document.getElementById("validationCustom02").value
   if( calle.style.display === "none"&&
     numero.style.display === "none"&&
-    esq.style.display === "none" && name !=""){
+    esq.style.display === "none"){
       localStorage.setItem("nombre", name)
     console.log("Funciona")
     location.replace("whatsapp.html")
