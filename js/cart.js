@@ -338,7 +338,7 @@ function finalizarCompra(){
   let name = document.getElementById("validationCustom02").value
   if( calle.style.display === "none"&&
     numero.style.display === "none"&&
-    esq.style.display === "none"){
+    esq.style.display === "none" && name !=""){
       localStorage.setItem("nombre", name)
     console.log("Funciona")
     location.replace("whatsapp.html")
