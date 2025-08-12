@@ -1,5 +1,6 @@
 body{
-    background: linear-gradient(to bottom,#0E3B5A 30%, #5EE4F4);
+background: linear-gradient(to right, #306583, #2C4756);
+
     font-family: 'Poppins', sans-serif;
    
 }
@@ -186,7 +187,11 @@ color: #333;
 #logo {
     width: 25%;
     height: 255px;
-}
+  }
+
+
+
+
 
 #title {
     text-align: center;
